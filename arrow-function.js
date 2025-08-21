@@ -32,3 +32,32 @@ console.log(result1);
 console.log(result2);
 console.log(result3);
 console.log(result4);
+
+//function calling another function - function chaining
+const cutFruitPieces = fruit => fruit * 4;
+const fruitProcessor = (apple, orange) => {
+    const applePieces = cutFruitPieces(apple);
+    const orangePiece = cutFruitPieces(orange);
+    return `Fruit juice with ${applePieces} pieces of apple and ${orangePiece} pieces of orange.`
+}
+const juice = fruitProcessor(2,4);
+console.log(juice);
+
+
+
+
+const calcAverage = (num1, num2, num3) => (num1+num2+num3)/3;
+
+const scoreDolphins = calcAverage(44,23,71);
+const scoreKoalas = calcAverage(65,54,49);
+console.log(`Dolphins average score is ${scoreDolphins} and Kolas average score is ${scoreKoalas}`);
+
+function checkWinner(scoreKoalas, scoreDolphins){
+    if (scoreKoalas > scoreDolphins){
+        console.log(`Koalas win (${scoreKoalas} vs. ${scoreDolphins})`)
+    } else {
+        console.log(`Dolphins win (${scoreDolphins} vs. ${scoreKoalas})`)
+    }
+}
+
+console.log(checkWinner(scoreKoalas, scoreDolphins));
