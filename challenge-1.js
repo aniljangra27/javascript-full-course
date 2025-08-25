@@ -1,4 +1,5 @@
-/* Write your code below. Good luck! 🙂 */
+'use strict';
+
 const mark = {
     fullName: "Mark Miller's",
     mass: 78,

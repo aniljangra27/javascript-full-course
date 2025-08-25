@@ -1,5 +1,5 @@
 // Object defination
-
+'use strict';
 const person = {
 	firstName: "Anil",
 	lastName: "Jangra",
