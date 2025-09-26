@@ -123,3 +123,8 @@ console.log(arr.reduce((a, b) => a + b, 0)); // 10
 
 // With initialValue = 5
 console.log(arr.reduce((a, b) => a + b, 5)); // 15
+
+console.log('\n ---findIndex ----\n');
+const array = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(array.findIndex(isLargeNumber));
