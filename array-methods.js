@@ -181,3 +181,7 @@ const capitalize = function (str) {
 console.log(capitalize('this is a nice title'));
 console.log(capitalize('this is a LONG title but not too long'));
 console.log(capitalize('and here is another title with an EXAMPLE'));
+console.log('\n ---findIndex ----\n');
+const array = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(array.findIndex(isLargeNumber));
