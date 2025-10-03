@@ -123,3 +123,61 @@ console.log(arr.reduce((a, b) => a + b, 0)); // 10
 
 // With initialValue = 5
 console.log(arr.reduce((a, b) => a + b, 5)); // 15
+
+//Sort
+const sortArr = [4, 2, 5, 1, 3];
+console.log(sortArr.sort()); // [1, 2, 3, 4, 5]
+console.log(sortArr.sort((a, b) => a - b)); // [1, 2, 3, 4, 5] Ascending
+console.log(sortArr.sort((a, b) => b - a)); // [5, 4, 3, 2, 1] Descending
+
+//More examples
+const owners = ['Kumar', 'Adam', 'John', 'Martha'];
+console.log(owners.sort()); //['Adam', 'John', 'Kumar', 'Martha']
+
+// Example 2
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements.sort()); //[-130, -400, -650, 1300, 200, 3000, 450, 70] wrong result
+//Solution
+console.log(movements.sort((a, b) => a - b)); // Ascending [-650, -400, -130, 70, 200, 450, 1300, 3000]
+console.log(movements.sort((a, b) => b - a)); // Descending [3000, 1300, 450, 200, 70, -130, -400, -650]
+
+console.log('\n --- Group by ---\n');
+const inventory = [
+  { name: 'asparagus', type: 'vegetables', quantity: 9 },
+  { name: 'bananas', type: 'fruit', quantity: 5 },
+  { name: 'goat', type: 'meat', quantity: 23 },
+  { name: 'cherries', type: 'fruit', quantity: 12 },
+  { name: 'fish', type: 'meat', quantity: 22 },
+];
+
+const grpByInventory = Object.groupBy(inventory, item => {
+  return item.type;
+});
+
+console.log(grpByInventory);
+// get one type array
+console.log(grpByInventory.fruit);
+
+/**
+ * with() - copy and change the array without chaning original
+ */
+
+const newMovment = movements.with(1, 100); // add 100 at index 1
+console.log(movements);
+console.log(newMovment);
+
+// capitalize first letter of each word
+const capitalize = function (str) {
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+  const titleCase = str
+    .toLowerCase()
+    .split(' ')
+    .map(word =>
+      exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(' ');
+  return titleCase;
+};
+console.log(capitalize('this is a nice title'));
+console.log(capitalize('this is a LONG title but not too long'));
+console.log(capitalize('and here is another title with an EXAMPLE'));
